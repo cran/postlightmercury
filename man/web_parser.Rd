@@ -2,7 +2,7 @@
 % Please edit documentation in R/mercury.R
 \name{web_parser}
 \alias{web_parser}
-\title{web_parser}
+\title{Parses web pages}
 \source{
 \url{https://mercury.postlight.com/web-parser/}
 }
@@ -26,8 +26,7 @@ free from any clutter. It’s reliable, easy-to-use and free.
 \dontrun{
 # First get api key here: https://mercury.postlight.com/web-parser/
 
-# Then run the code below replacing the X's wih your api key.
-
+# Then run the code below replacing the X's wih your api key:
 web_parser(page_urls = "https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed",
            api_key = XXXXXXXXXXXXXXXXXXXXXXX)
 }

@@ -1,5 +1,5 @@
 #### web_parser #### ----
-#' web_parser
+#' Parses web pages
 #'
 #' With just one API request, Mercury takes any web article and returns only the
 #' relevant content — headline, author, body text, relevant images and more —
@@ -17,8 +17,7 @@
 #' \dontrun{
 #' # First get api key here: https://mercury.postlight.com/web-parser/
 #'
-#' # Then run the code below replacing the X's wih your api key.
-#'
+#' # Then run the code below replacing the X's wih your api key:
 #' web_parser(page_urls = "https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed",
 #'            api_key = XXXXXXXXXXXXXXXXXXXXXXX)
 #' }
@@ -53,6 +52,56 @@ web_parser <- function(page_urls, api_key){
 
   # Returns the tibble
   return(df)
+}
+
+#### strip_html #### ----
+
+#' Removes html
+#'
+#' The function uses tools from the rvest and xml2 packages to clean up the HTML
+#' and turning it into proper text.
+#'
+#' @param strings the string(s) you want to clean
+#' @param trim should the string be trimmed or not
+#'
+#' @return a string
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # First get api key here: https://mercury.postlight.com/web-parser/
+#'
+#' # Then run the code below replacing the X's wih your api key.
+#' url <- "https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed"
+#' my_data <- web_parser(page_urls = url,
+#'                       api_key = XXXXXXXXXXXXXXXXXXXXXXX)
+#'
+#' # With html formatting:
+#' my_data$content
+#'
+#' # Now remove it:
+#' my_data$content <- remove_html(my_data$content)
+#'
+#' # Without html formatting:
+#' my_data$content
+#' }
+
+remove_html <- function(strings, trim = TRUE) {
+
+  # Loop over each string
+  clean_strings <- purrr::map_chr(strings, function(string){
+
+    # Read in the html using the xml2 package
+    string <- xml2::read_html(string)
+
+    # Extract the text using the rvest package
+    string <- rvest::html_text(string, trim = trim)
+
+    # Return the cleaned text without html formatting
+    return(string)
+  })
+
+  return(clean_strings)
 }
 
 #### null_to_na #### ----

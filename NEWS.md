@@ -5,4 +5,6 @@
 * Added the helper function `null_to_na()` to replace NULLs with NAs when converting lists to data frames.
 * Added codecoverage
 
+# postlightmercury 1.2
+* Added remove_html() function to clean html from content column.
 

@@ -1,6 +1,6 @@
 library(postlightmercury)
 library(testthat)
-context("Testing web_parser")
+context("Testing web_parser()")
 
 api_key <- NULL
 
@@ -42,3 +42,12 @@ test_that("the web parser works with three urls", {
   expect_equal(dim(parsed_data), c(3, 14))
 })
 
+context("Testing remove_html()")
+
+test_that("the html remover works", {
+  check_api()
+  clean_strings <- remove_html(parsed_data$content)
+
+  expect_equal(length(clean_strings), 3)
+  expect_equal(nchar(parsed_data$content) > nchar(clean_strings), c(TRUE, TRUE, TRUE))
+})

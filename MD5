@@ -1,10 +1,11 @@
-fab526ced986366bf379ccab880697cf *DESCRIPTION
+8f80c4bb0c0da961a3046151e2201893 *DESCRIPTION
 3c986c3274d5db0e5d1bacd3d5141d49 *LICENSE
-77c9c111297a63dfae43a30b1bc6a083 *NAMESPACE
-e190a3ad60b5271f022716694ef815ef *NEWS.md
-0a94e92aaad8b1d9da4238c2b0b0fbac *R/mercury.R
+2347e341e1302bf46fba7c41ff953d95 *NAMESPACE
+1f236b13f99d6b0a9f540e471364374f *NEWS.md
+3473afed69a7c7fbf74ed3c65877cb54 *R/mercury.R
 449fee5f43d4aef282987e1349576cb5 *README.md
 e766682d5ae90ff115cc5b22b89722c3 *man/null_to_na.Rd
-ee5ef36ee26ff4dd49dd5b729f865651 *man/web_parser.Rd
+9e15834f5a3b5ed13303f247699ae6eb *man/remove_html.Rd
+6fdfb120ebbfe6326769ab60b2bf717d *man/web_parser.Rd
 9b1e5470bc9ec8ab5ef97be273455f17 *tests/testthat.R
-c4d2f330bd5f052a90c233d4dac12f67 *tests/testthat/test_mercury.R
+b9371169409cb763c6f0e9da24cb8b36 *tests/testthat/test_mercury.R
